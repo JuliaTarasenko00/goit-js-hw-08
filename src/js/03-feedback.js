@@ -3,6 +3,8 @@ import storage from './local';
 
 
  const formEl = document.querySelector('.feedback-form');
+ const emailEl = document.querySelector('input[name="email"]');
+ const massageEl = document.querySelector('textarea[name="message"]');
  
   
 // console.log(refs.inputEmail);
@@ -15,6 +17,10 @@ formEl.addEventListener('submit', onSubmit);
 const STORAGE_KEY = 'feedback-form-state';
 const formData = {};
 
+const elements = {
+  password: emailEl,
+  login: massageEl,
+}
 
 returnTextareaMassage();
 
@@ -28,7 +34,7 @@ function onTextareaMassage({ target }) {
     e.preventDefault();
 
     
-    if (!formData.email || !formData.message) {
+    if (elements.password.value === '' || elements.login.value === '') {
         alert('Заповніть усі поля!');
         return;
       }
