@@ -26,13 +26,14 @@ function onTextareaMassage({ target }) {
   
   function onSubmit(e) {
     e.preventDefault();
-    formEl.reset();
-    storage.remove(STORAGE_KEY);
 
+    
     if (!formData.email || !formData.message) {
         alert('Заповніть усі поля!');
         return;
       }
+    formEl.reset();
+    storage.remove(STORAGE_KEY);
     console.log(formData);
   }
 function returnTextareaMassage() {
