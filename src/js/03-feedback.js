@@ -28,10 +28,10 @@ function onTextareaMassage({ target }) {
         return;
       }
 
-    formData = {};
     formEl.reset();
     storage.remove(STORAGE_KEY);
     console.log(formData);
+    formData = {};
   }
 function returnTextareaMassage() {
     const massage = storage.load(STORAGE_KEY);
